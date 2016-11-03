@@ -1,5 +1,7 @@
 # how to setup webpack 2
 
+<img src="https://raw.githubusercontent.com/gokulkrishh/how-to-setup-webpack-2/master/logo.png" widht="100px" height="100px" />
+
 Tutorial to setup [webpack 2 (beta)](https://webpack.github.io/docs/roadmap.html) from scratch based on this [medium article](https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783#.3dou6bawv) by [Drew Powers](https://blog.madewithenvy.com/@an_ennui) and other few articles.
 
 ## Table of content
@@ -77,6 +79,12 @@ To run webpack in ```development mode```.
 $ webpack
 ```
 
+*Screenshot of development server*
+
+<img src="https://raw.githubusercontent.com/gokulkrishh/how-to-setup-webpack-2/master/webpack.png" style="max-width: 100%" />
+
+**Total Size: ** 208KB
+
 or run webpack in ```production mode```.
 
 ```bash
@@ -84,6 +92,12 @@ $ webpack -p
 ```
 
 - ```p``` is for production which uglifies and minifies files.
+
+*Screenshot of development server*
+
+<img src="https://raw.githubusercontent.com/gokulkrishh/how-to-setup-webpack-2/master/webpack-p.png" style="max-width: 100%" />
+
+**Total Size: ** 38KB
 
 ### **```Step 5```** - Setup webpack development server
 
