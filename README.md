@@ -118,7 +118,11 @@ Run development server.
 $ webpack-dev-server
 ```
 
-Thats all basic webpack config is done. But what about ```babel, ES6``` loaders ? How to setup that ?
+Thats all basic webpack config is done. But what about ```CSS, Images, ES6``` loaders ? How to setup that ?
 
-##### WIP
+### **```Loaders```** - WIP
 
+##### Articles 
+
+- [Getting started with webpack-2](https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783#.3dou6bawv)
+- [Moving-to-webpack-2](http://javascriptplayground.com/blog/2016/10/moving-to-webpack-2/)
