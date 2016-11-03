@@ -80,7 +80,7 @@ $ webpack -p
 
 ### **```Step 5```**
 
-Webpack has its own development server. Lets setup that in ```webpack.config.js```
+Webpack has its own development server. Lets setup that in ```webpack.config.js``` by adding the following
 
 ```js
 devServer: {
