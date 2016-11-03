@@ -8,7 +8,7 @@ Tutorial to setup [webpack 2 (beta)](https://webpack.github.io/docs/roadmap.html
 
 ### **```Step 1```**
 
-Create a folder called ```webpack-2-demo``` and cd into it
+Create a folder called ```webpack-2-demo``` and cd into it.
 
 ```bash
 $ mkdir webpack-2-demo && cd webpack-2-demo
@@ -45,7 +45,7 @@ module.exports = {
 };
 ```
 
-Add [lodash](https://lodash.com) to dependencies in ```package.json``` by
+Add [lodash](https://lodash.com) to dependencies in ```package.json``` by.
 
 ```bash
 $ npm install --save-dev lodash
@@ -64,13 +64,13 @@ console.log(other); //[1, 2, 3, [4]]
 
 ### **```Step 4```**
 
-To run webpack in development mode
+To run webpack in ```development mode```.
 
 ```bash
 $ webpack
 ```
 
-or run webpack in production mode
+or run webpack in ```production mode```.
 
 ```bash
 $ webpack -p
@@ -80,7 +80,7 @@ $ webpack -p
 
 ### **```Step 5```**
 
-Webpack has its own development server. Lets setup that in ```webpack.config.js``` by adding the following
+Webpack has its own development server. Lets setup that in ```webpack.config.js``` by adding the following.
 
 ```js
 devServer: {
@@ -94,18 +94,18 @@ And add the script for ```bundle.js``` in ```src/index.html```.
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Webpack 2 Demo</title>
+  <title>Webpack 2 Demo</title>
 </head>
 <body>
 		
-	<script src="/assets/bundle.js"></script>
+  <script src="/assets/bundle.js"></script>
 </body>
 </html>
 ```
 
 ### **```Step 6```**
 
-Run development server by
+Run development server.
 
 ```bash
 $ webpack-dev-server
