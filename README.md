@@ -77,6 +77,12 @@ To run webpack in ```development mode```.
 $ webpack
 ```
 
+*Screenshot of development server*
+
+<img src="https://raw.githubusercontent.com/gokulkrishh/how-to-setup-webpack-2/master/webpack.png" style="max-width: 100%" />
+
+**Total Size:** 208KB
+
 or run webpack in ```production mode```.
 
 ```bash
@@ -84,6 +90,12 @@ $ webpack -p
 ```
 
 - ```p``` is for production which uglifies and minifies files.
+
+*Screenshot of development server*
+
+<img src="https://raw.githubusercontent.com/gokulkrishh/how-to-setup-webpack-2/master/webpack-p.png" style="max-width: 100%" />
+
+**Total Size:** 38KB
 
 ### **```Step 5```** - Setup webpack development server
 
