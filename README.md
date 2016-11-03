@@ -4,6 +4,13 @@ Tutorial to setup [webpack 2 (beta)](https://webpack.github.io/docs/roadmap.html
 
 ## Table of content
 
+1. [Create Folder] (#step1)
+1. [Install webpack] (#step2)
+1. [Write webpack config] (#step3)
+1. [Run the webpack] (#step4)
+1. [Setup webpack development server] (#step5)
+1. [Run development server] (#step6)
+
 ### Setup & Installation
 
 ### **```Step 1```**
