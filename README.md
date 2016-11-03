@@ -61,7 +61,7 @@ $ npm install --save-dev lodash
 And let's write some code in ```src/app.js```
 
 ```js
-var array = require('lodash/array'); //Lets require only array src from lodash
+var _ = require('lodash');
 
 var array = [1];
 var other = _.concat(array, 2, [3], [[4]]);
@@ -129,6 +129,8 @@ Run development server.
 ```bash
 $ webpack-dev-server
 ```
+
+Open [http://localhost:8080/](http://localhost:8080/) in your browser.
 
 Thats all basic webpack config is done. But what about ```CSS, Images, ES6``` loaders ? How to setup that ?
 
