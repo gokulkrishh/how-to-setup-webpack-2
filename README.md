@@ -6,11 +6,15 @@ Tutorial to setup [webpack 2 (beta)](https://webpack.github.io/docs/roadmap.html
 
 ### Setup & Installation
 
-```Step 1```
+**```Step 1```**
 
-Create a folder called ```webpack-2-test``` and cd into it
+Create a folder called ```webpack-2-demo``` and cd into it
 
-```Step 2```
+```bash
+$ mkdir webpack-2-demo && cd webpack-2-demo
+```
+
+**```Step 2```**
 
 ```bash
 $ npm install --dev-save webpack@2.1.0-beta.25 webpack-dev-server@2.1.0-beta.9
@@ -22,7 +26,7 @@ or do it via [Yarn](https://yarnpkg.com/)
 $ yarn add --dev webpack@2.1.0-beta.25 webpack-dev-server@2.1.0-beta.9
 ```
 
-```Step 4```
+**```Step 3```**
 
 Create a ```webpack.config.js``` in root of our directory and let's write some configuration.
 
@@ -58,7 +62,7 @@ var other = _.concat(array, 2, [3], [[4]]);
 console.log(other); //[1, 2, 3, [4]]
 ```
 
-```Step 5```
+**```Step 4```**
 
 To run webpack in development mode
 
@@ -74,7 +78,7 @@ $ webpack -p
 
 - ```p``` is for production which uglifies and minifies files.
 
-```Step 5```
+**```Step 5```**
 
 Webpack has its own development server. Lets setup that in ```webpack.config.js```
 
@@ -99,9 +103,9 @@ And add the script for ```bundle.js``` in ```src/index.html```.
 </html>
 ```
 
-```Step 6```
+**```Step 6```**
 
-Run development server
+Run development server by
 
 ```bash
 $ webpack-dev-server
@@ -109,4 +113,5 @@ $ webpack-dev-server
 
 Thats all basic webpack config is done. But what about ```babel, ES6``` loaders ? How to setup that ?
 
+##### WIP
 
