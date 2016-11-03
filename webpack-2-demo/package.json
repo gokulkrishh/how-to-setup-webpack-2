@@ -1,0 +1,10 @@
+{
+  "name": "webpack-2-demo",
+  "devDependencies": {
+    "webpack": "^2.1.0-beta.25",
+    "webpack-dev-server": "^2.1.0-beta.9"
+  },
+  "dependencies": {
+    "lodash": "^4.16.6"
+  }
+}
