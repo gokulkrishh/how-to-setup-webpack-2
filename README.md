@@ -103,7 +103,7 @@ Webpack has its own development server. Lets setup that in ```webpack.config.js`
 
 ```js
 devServer: {
-  contentBase: __dirname + "/src",
+  contentBase: __dirname + '/src',
 },
 ```
 
@@ -132,11 +132,129 @@ $ webpack-dev-server
 
 Open [http://localhost:8080/](http://localhost:8080/) in your browser.
 
-Thats all basic webpack config is done. But what about ```CSS, Images, ES6``` loaders ? How to setup that ?
+Thats all basic webpack config is done. But what about ```SASS, IMAGES, ES6``` loaders ? How to setup that ? Lets see.
 
-### **```Loaders```** - WIP
+### Loaders
 
-##### Articles 
+Lets set up ```ES6 + Babel``` using a webpack loader.
 
-- [Getting started with webpack-2](https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783#.3dou6bawv)
-- [Moving-to-webpack-2](http://javascriptplayground.com/blog/2016/10/moving-to-webpack-2/)
+### **```Step 1```** - Install babel loader,core & ES6 preset.
+
+```bash
+$ npm install --save-dev babel-loader babel-core babel-preset-es2015
+```
+After installation, We have to add config to ```webpack.config.js``` file.
+
+### **```Step 2```** - ES6 Loader
+
+```js
+module: {
+  rules: [
+    {
+      test: /\.js$/, //Check for all js files
+      use: [{
+        loader: 'babel-loader',
+        options: { presets: ['es2015'] }
+      }]
+    }
+  ]
+}
+```
+
+In order to check babel loader, we will change ```app.js``` to ES6 syntax.
+
+```js
+'use strict';
+
+import _ from 'lodash'; //ES6 import to check our babel loader
+
+const array = [1];
+const other = _.concat(array, 2, [3], [[4]]);
+
+console.log(other); //[1, 2, 3, [4]]
+```
+
+Run the development server and check the console.
+
+```bash
+$ webpack-dev-server
+```
+
+### **```Step 3```** - SASS & CSS Loader
+
+Install SASS & CSS Loader
+
+```bash
+$ npm install --save-dev css-loader style-loader sass-loader node-sass
+```
+
+SASS & CSS loader config for webpack is below.
+
+```js
+module: {
+  rules: [{
+    test: /\.(sass|scss)$/, //Check for sass or scss file names
+    use: [
+      'style-loader',
+      'css-loader',
+      'sass-loader',
+    ]
+  }]
+}
+```
+
+### **```Final```**
+
+Final step contains all the config for webpack from above.
+
+```js
+'use strict';
+var webpack = require('webpack');
+
+module.exports = {
+  context: __dirname + '/src', // `__dirname` is root of project and `src` is source
+  entry: {
+    app: './app.js',
+  },
+  output: {
+    path: __dirname + '/dist', // `dist` is the destination
+    filename: 'bundle.js',
+    publicPath: "/assets",
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/, //Check for all js files
+        use: [{
+          loader: 'babel-loader',
+          options: { presets: ['es2015'] }
+        }]
+      },
+      {
+        test: /\.(sass|scss)$/, //Check for sass or scss file names
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ]
+      },
+      { 
+        test: /\.json$/, 
+        loader: "json-loader"  //JSON loader
+      }
+    ]
+  },
+  //To run development server
+  devServer: {
+    contentBase: __dirname + '/src',
+  },
+};
+```
+
+Thats all. Thanks for reading my repo. 
+
+#### Articles 
+
+- [Getting started with webpack 2](https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783#.3dou6bawv)
+- [Webpack examples](https://github.com/webpack/webpack/tree/master/examples)
+- [Moving to webpack 2](http://javascriptplayground.com/blog/2016/10/moving-to-webpack-2/)
