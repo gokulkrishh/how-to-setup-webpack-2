@@ -10,8 +10,8 @@ Tutorial to setup [webpack v2](https://webpack.github.io/docs/roadmap.html) from
 1. [Run the webpack] (#step-4---run-the-webpack)
 1. [Setup webpack development server] (#step-5---setup-webpack-development-server)
 1. [Run development server] (#step-6---run-development-server)
-1. [Setup development & production env] (#step-7---set up dev & prod environment)
-1. [Sourcemap for development & production] (#step-8---sourcemap dev & prod environment)
+1. [Setup development & production env] (#step-7---setup-dev--prod-environment)
+1. [Sourcemap for development & production] (#step-8---sourcemap-for-dev--prod)
 
 ### Setup & Installation
 
@@ -208,9 +208,9 @@ module: {
 }
 ```
 
-### **```Step 7```** - Setup Dev & Prod Environment
+After `loaders`, final steps are setting up sourcemaps and env for webpack.
 
-So dev server setup is done. Now lets setup Dev & Prod env in webpack.
+### **```Step 7```** - Setup Dev & Prod Environment
 
 In `package.json` file, lets add scripts to run our dev server and build with env.
 
@@ -223,9 +223,9 @@ In `package.json` file, lets add scripts to run our dev server and build with en
 
 `NODE_ENV=production` is environment set for build. Using `process.env.NODE_ENV`, we can check the env in webpack.
 
-### **```Step 7```** - Sourcemap for Dev & Prod
+### **```Step 8```** - Sourcemap for Dev & Prod
 
-Now we know when we are running production build or development. So using `process.env.NODE_ENV`. Lets setup the sourcemap accordingly.
+Now we know when we are running production build or development. Lets use it to setup the sourcemap accordingly.
 
 ```js
 
