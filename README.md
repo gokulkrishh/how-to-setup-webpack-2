@@ -1,6 +1,6 @@
 # how to setup webpack 2
 
-Tutorial to setup [webpack 2 (beta)](https://webpack.github.io/docs/roadmap.html) from scratch based on this [medium article](https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783#.3dou6bawv) by [Drew Powers](https://blog.madewithenvy.com/@an_ennui) and other few articles.
+Tutorial to setup [webpack v2](https://webpack.github.io/docs/roadmap.html) from scratch based on this [medium article](https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783#.3dou6bawv) by [Drew Powers](https://blog.madewithenvy.com/@an_ennui) and other few articles.
 
 ## Table of content
 
@@ -10,6 +10,8 @@ Tutorial to setup [webpack 2 (beta)](https://webpack.github.io/docs/roadmap.html
 1. [Run the webpack] (#step-4---run-the-webpack)
 1. [Setup webpack development server] (#step-5---setup-webpack-development-server)
 1. [Run development server] (#step-6---run-development-server)
+1. [Setup development & production env] (#step-7---set up dev & prod environment)
+1. [Sourcemap for development & production] (#step-8---sourcemap dev & prod environment)
 
 ### Setup & Installation
 
@@ -24,13 +26,13 @@ $ mkdir webpack-2-demo && cd webpack-2-demo
 ### **```Step 2```** - Install webpack
 
 ```bash
-$ npm install --dev-save webpack@2.1.0-beta.25 webpack-dev-server@2.1.0-beta.9
+$ npm install --dev-save webpack@latest webpack-dev-server@latest
 ```
 
 or do it via [Yarn](https://yarnpkg.com/)
 
 ```bash
-$ yarn add --dev webpack@2.1.0-beta.25 webpack-dev-server@2.1.0-beta.9
+$ yarn add --dev webpack@latest webpack-dev-server@latest
 ```
 
 ### **```Step 3```** - Write webpack config
@@ -40,7 +42,7 @@ Create a ```webpack.config.js``` in root of our directory and let's write some c
 ```js
 var webpack = require('webpack');
 
-module.exports = {
+var config = {
   context: __dirname + '/src', // `__dirname` is root of project and `src` is source
   entry: {
     app: './app.js',
@@ -50,12 +52,14 @@ module.exports = {
     filename: '[name].bundle.js',
   },
 };
+
+module.exports = config;
 ```
 
-Add [lodash](https://lodash.com) to dependencies in ```package.json``` by.
+Now lets add [lodash](https://lodash.com) to dependencies in ```package.json``` by.
 
 ```bash
-$ npm install --save-dev lodash
+$ yarn add --dev lodash
 ```
 
 And let's write some code in ```src/app.js```
@@ -103,6 +107,7 @@ Webpack has its own development server. Lets setup that in ```webpack.config.js`
 
 ```js
 devServer: {
+  open: true, // to open the local server in browser
   contentBase: __dirname + '/src',
 },
 ```
@@ -203,6 +208,41 @@ module: {
 }
 ```
 
+### **```Step 7```** - Setup Dev & Prod Environment
+
+So dev server setup is done. Now lets setup Dev & Prod env in webpack.
+
+In `package.json` file, lets add scripts to run our dev server and build with env.
+
+```json
+"scripts": {
+  "start": "webpack-dev-server",
+  "build": "NODE_ENV=production webpack -p --config webpack.config.js"
+}
+```
+
+`NODE_ENV=production` is environment set for build. Using `process.env.NODE_ENV`, we can check the env in webpack.
+
+### **```Step 7```** - Sourcemap for Dev & Prod
+
+Now we know when we are running production build or development. So using `process.env.NODE_ENV`. Lets setup the sourcemap accordingly.
+
+```js
+
+var config = {
+  devtool: "eval-source-map" // Default development sourcemap
+};
+
+// Check if build is running in production mode, then change the sourcemap type
+if (process.env.NODE_ENV === "production") {
+  config.devtool = "source-map";
+}
+
+module.exports = config;
+```
+
+More information on [sourcemaps](http://erikaybar.name/webpack-source-maps-in-chrome/?utm_source=javascriptweekly&utm_medium=email)
+
 ### **```Final```**
 
 Final step contains all the config for webpack from above.
@@ -211,7 +251,7 @@ Final step contains all the config for webpack from above.
 'use strict';
 var webpack = require('webpack');
 
-module.exports = {
+var config = {
   context: __dirname + '/src', // `__dirname` is root of project and `src` is source
   entry: {
     app: './app.js',
@@ -248,7 +288,16 @@ module.exports = {
   devServer: {
     contentBase: __dirname + '/src',
   },
+
+  devtool: "eval-source-map" // Default development sourcemap
 };
+
+// Check if build is running in production mode, then change the sourcemap type
+if (process.env.NODE_ENV === "production") {
+  config.devtool = "source-map";
+}
+
+module.exports = config;
 ```
 
 Thats all. Thanks for reading my repo. 
