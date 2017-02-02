@@ -1,4 +1,4 @@
-# how to setup webpack 2
+# [how to setup webpack 2](https://gokulkrishh.github.io/webpack/2017/02/03/how-to-setup-webpack-2.html)
 
 Tutorial to setup [webpack v2](https://webpack.github.io/docs/roadmap.html) from scratch based on this [medium article](https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783#.3dou6bawv) by [Drew Powers](https://blog.madewithenvy.com/@an_ennui) and other few articles.
 
