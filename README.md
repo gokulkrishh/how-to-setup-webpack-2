@@ -2,16 +2,18 @@
 
 Tutorial to setup [webpack v2](https://webpack.github.io/docs/roadmap.html) from scratch based on this [medium article](https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783#.3dou6bawv) by [Drew Powers](https://blog.madewithenvy.com/@an_ennui) and other few articles.
 
+# Read my blog post on [how to setup webpack 2](https://gokulkrishh.github.io/webpack/2017/02/03/how-to-setup-webpack-2.html)
+
 ## Table of content
 
-1. [Create folder] (#step-1---create-folder)
-1. [Install webpack] (#step-2---install-webpack)
-1. [Write webpack config] (#step-3---write-webpack-config)
-1. [Run the webpack] (#step-4---run-the-webpack)
-1. [Setup webpack development server] (#step-5---setup-webpack-development-server)
-1. [Run development server] (#step-6---run-development-server)
-1. [Setup development & production env] (#step-7---setup-dev--prod-environment)
-1. [Sourcemap for development & production] (#step-8---sourcemap-for-dev--prod)
+1. [Create folder](#step-1---create-folder)
+1. [Install webpack](#step-2---install-webpack)
+1. [Write webpack config](#step-3---write-webpack-config)
+1. [Run the webpack](#step-4---run-the-webpack)
+1. [Setup webpack development server](#step-5---setup-webpack-development-server)
+1. [Run development server](#step-6---run-development-server)
+1. [Setup development & production env](#step-7---setup-dev--prod-environment)
+1. [Sourcemap for development & production](#step-8---sourcemap-for-dev--prod)
 
 ### Setup & Installation
 
