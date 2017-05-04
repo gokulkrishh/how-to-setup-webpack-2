@@ -1,10 +1,8 @@
 # [How To Setup Webpack 2](https://gokulkrishh.github.io/webpack/2017/02/03/how-to-setup-webpack-2.html)
 
- <p align="center"><img width="250px" height="250px" src="https://raw.githubusercontent.com/gokulkrishh/how-to-setup-webpack-2/master/logo.png"/></p>
-
 > Simple tutorial on how to setup webpack v2.
 
-# Read my blog post on [how to setup webpack 2](https://gokulkrishh.github.io/webpack/2017/02/03/how-to-setup-webpack-2.html)
+## Read my blog post on [how to setup webpack 2](https://gokulkrishh.github.io/webpack/2017/02/03/how-to-setup-webpack-2.html)
 
 ## Table of content
 
