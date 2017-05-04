@@ -28,7 +28,7 @@ $ mkdir webpack-2-demo && cd webpack-2-demo
 ### **```Step 2```** - Install webpack
 
 ```bash
-$ npm install --dev-save webpack@latest webpack-dev-server@latest
+$ npm install --save-dev webpack@latest webpack-dev-server@latest
 ```
 
 or do it via [Yarn](https://yarnpkg.com/)
