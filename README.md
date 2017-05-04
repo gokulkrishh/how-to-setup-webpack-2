@@ -1,6 +1,8 @@
 # [how to setup webpack 2](https://gokulkrishh.github.io/webpack/2017/02/03/how-to-setup-webpack-2.html)
 
-Tutorial to setup [webpack v2](https://webpack.github.io/docs/roadmap.html) from scratch based on this [medium article](https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783#.3dou6bawv) by [Drew Powers](https://blog.madewithenvy.com/@an_ennui) and other few articles.
+ <p align="center"><img width="250px" height="250px" src="https://raw.githubusercontent.com/gokulkrishh/how-to-setup-webpack-2/master/logo.svg"/></p>
+
+> Simple tutorial on how to setup webpack v2.
 
 # Read my blog post on [how to setup webpack 2](https://gokulkrishh.github.io/webpack/2017/02/03/how-to-setup-webpack-2.html)
 
@@ -159,10 +161,10 @@ module: {
   rules: [
     {
       test: /\.js$/, //Check for all js files
-      use: [{
-        loader: 'babel-loader',
-        options: { presets: ['es2015'] }
-      }]
+      loader: 'babel-loader',
+      query: {
+        presets: [ "babel-preset-es2015" ].map(require.resolve)
+      }
     }
   ]
 }
@@ -267,10 +269,10 @@ var config = {
     rules: [
       {
         test: /\.js$/, //Check for all js files
-        use: [{
-          loader: 'babel-loader',
-          options: { presets: ['es2015'] }
-        }]
+        loader: 'babel-loader',
+        query: {
+          presets: [ "babel-preset-es2015" ].map(require.resolve)
+        }
       },
       {
         test: /\.(sass|scss)$/, //Check for sass or scss file names
