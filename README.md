@@ -19,10 +19,11 @@
 
 ### **```Step 1```** - Create folder
 
-Create a folder called ```webpack-2-demo``` and cd into it.
+First let's create a directory called ```webpack-2-demo``` and initialize npm:
 
 ```bash
 $ mkdir webpack-2-demo && cd webpack-2-demo
+$ npm init -y
 ```
 
 ### **```Step 2```** - Install webpack
@@ -123,7 +124,7 @@ And add the script for ```bundle.js``` in ```src/index.html```.
   <title>Webpack 2 Demo</title>
 </head>
 <body>
-		
+
   <script src="/assets/bundle.js"></script>
 </body>
 </html>
@@ -280,8 +281,8 @@ var config = {
           'sass-loader',
         ]
       },
-      { 
-        test: /\.json$/, 
+      {
+        test: /\.json$/,
         loader: "json-loader"  //JSON loader
       }
     ]
@@ -307,9 +308,9 @@ if (process.env.NODE_ENV === "production") {
 module.exports = config;
 ```
 
-Thats all. Thanks for reading my repo. 
+Thats all. Thanks for reading my repo.
 
-#### Articles 
+#### Articles
 
 - [Getting started with webpack 2](https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783#.3dou6bawv)
 - [Webpack examples](https://github.com/webpack/webpack/tree/master/examples)
