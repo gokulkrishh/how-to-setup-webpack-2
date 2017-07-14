@@ -52,6 +52,7 @@ var config = {
   },
   output: {
     path: __dirname + '/dist', // `dist` is the destination
+    publicPath: "/assets/",
     filename: '[name].bundle.js',
   },
 };
